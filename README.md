@@ -1,2 +1,2 @@
-# obsidian-universal-publish-server
-server for obsidian-universal-publish plugin
+# obsidian-universal-publish-mkdocs
+mkdocs service for obsidian-universal-publish-server

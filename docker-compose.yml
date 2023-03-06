@@ -1,0 +1,21 @@
+version: '3.3'
+services:
+  server:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - '127.0.0.1:9001:9001'
+    volumes:
+      - ./data/mkdocs.yml:/app/mkdocs.yml
+      - ./data/docs:/app/docs
+      - ./data/dist:/app/dist
+
+    environment:
+      - NODE_ENV=production
+      - HOST=0.0.0.0
+      - PORT=9001
+      - MKDOCS_CONFIG_PATH=/app/mkdocs.yml
+      - MKDOCS_BASE_DOCS_PATH=/app/docs
+      - MKDOCS_DIST_PATH=/app/dist
+    command: yarn node index.js

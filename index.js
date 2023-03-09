@@ -78,7 +78,6 @@ app.post('/generate', upload.single('file'), async (req, res) => {
       await fs.writeFile(outputFilePath, buffer)
     }
 
-    shell.exec(`ls ${path.join(publishDir, 'docs')}`)
     const command = `cd ${publishDir} && mkdocs build -d ${distDir} -c`;
     shell.exec(command);
 
